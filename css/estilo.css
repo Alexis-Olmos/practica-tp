@@ -1,0 +1,1206 @@
+/* reseteo */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.contenedor{
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+}
+/* ----------------------------------HOME------------------------------------------- */
+/* HEADER -> navegador */
+.contenedor .headerHome{
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    box-shadow: 1px 1px 5px #000;
+}
+
+.headerHome nav{
+    background-color: white;
+    height: 120px;
+    width: 100%;
+}
+
+.logo{
+    display: flex;
+    position: absolute;
+    padding: 20px 40px;
+}
+
+.logo img{
+    width: 75px;
+    height: 80px;
+}
+
+.logo .titulo{
+    font-size: 36px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-image: linear-gradient(rgb(34, 231, 182),rgb(2, 175, 132) , #00d9ff, #00a0bd );
+    background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+nav ul li{
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 130px;
+    margin: 0 10px;
+}
+
+nav ul li a{
+    color: rgba(0, 0, 0, 0.678);
+    font-size: 18px;
+    padding: 7px 13px;
+}
+
+nav ul li a:hover{
+    border-top: 3px solid rgb(34, 231, 182);
+    font-weight: bold;
+    color: #0dd6ec;
+}
+
+.checkBtn{
+    font-size: 30px;
+    color: #0dd6ec;
+    float: right;
+    line-height: 120px;
+    margin-right: 20px;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/*MAIN*/
+.contenedor main{
+    font-family: 'Space Grotesk', sans-serif;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "sectUno sectUno sectUno"
+    "sectDos sectDos sectDos"
+    "sectTres sectTres sectTres";
+}
+
+/* ****** section 1: portada smile ******** */
+main #img-portada {
+    grid-area: sectUno;
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/o\ esta.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.smile h1{
+    font-size: 40px;
+} 
+
+/* *** section2: clinica ********* */
+
+main #clinica{
+    grid-area: sectDos;
+    display: grid;
+    grid-template-columns: 0.8fr 0.5fr;
+    grid-template-rows: 1.3fr 0.7fr;
+    grid-template-areas: 
+    "article asideUno"
+    "asideDos asideDos";
+}
+
+/* imagen clinica */
+.img-clinica{
+    grid-area: article;
+    display: flex;
+}
+
+.img-clinica img{
+    max-width: 100%;
+    width: 800px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 50px;
+}
+
+/* datos clinica */
+.clinica__datos{
+    grid-area: asideUno;
+    display: flex;
+}
+
+.clinica__datos div{
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    align-items:center;
+    justify-content: center;
+    padding: 0 30px;
+    margin: 0 20px;
+    border: 2px dotted #0dd6ec ;
+    color: rgba(0, 0, 0, 0.678);
+}
+.clinica__datos button{
+    background-color: rgba(41, 40, 40, 0.13);
+    cursor: pointer;
+    border: none;
+    color: #06a6b8;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.clinica__datos h2{
+    text-align: center; 
+    align-items: center;
+    border-bottom: 2px groove #0dd6ec;
+    margin-bottom: 15px;
+    color: black;
+}
+
+/* tratamientos clinica */
+.clinica__trat{
+    grid-area:asideDos ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-top: 70px;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.clinica__trat h2{
+    color: black;
+}
+
+.clinica__trat button{
+    background-color: rgba(41, 40, 40, 0.13);
+    cursor: pointer;
+    border: none;
+    color: #06a6b8;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    margin-top: 20px;
+}
+
+/* **** section3: servicios ******** */
+
+main #servicios{
+    grid-area: sectTres;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "parUno parDos parTres"
+    "parUno parDos parTres";
+    padding: 90px 50px;
+    background-color: rgba(228, 224, 224, 0.466);
+}
+
+.parUno{
+    width: 100%;
+    grid-area: parUno;
+    display: flex;
+    flex-direction: column;
+}
+
+/* carta 1: ortodoncia */
+.carta__primera{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/bracket-tratamiento.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+/* carta 2: blanqueamiento */
+.carta__Segunda{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/blanqueamiento.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.parDos{
+    width: 100%;
+    grid-area: parDos;
+    display: flex;
+    flex-direction: column;
+}
+
+/* carta 3: invisaling */
+.carta__tercera{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/invisalight.png);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom: 50px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+/* carta 4: endodoncia */
+.carta__Cuarta{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/endodoncia-nueva.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.parTres{
+    width: 100%;
+    grid-area: parTres;
+    display: flex;
+    flex-direction: column;
+}
+
+/* carta 5: implantologia */
+.carta__quinta{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/tsyos.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom: 50px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+/* carta 6: carillas */
+.carta__sexta{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/carillas.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+/* posicion de titulo h3 y boton +info */
+.carta__primera h3, .carta__Segunda h3, .carta__tercera h3, .carta__Cuarta h3, .carta__quinta h3, .carta__sexta h3{
+    position: relative;
+    top: 35px;
+    color: white;
+}
+
+.carta__primera button, .carta__Segunda button, .carta__tercera button, .carta__Cuarta button, .carta__quinta button, .carta__sexta button{
+    position: relative;
+    top: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+}
+
+/* animaciones servicios */
+.carta__primera:hover, .carta__Segunda:hover, .carta__tercera:hover, .carta__Cuarta:hover, .carta__quinta:hover, .carta__sexta:hover, .carta__sexta:hover{
+    transition-duration: 1s;
+    transform: scale(1.15);
+    border: 2px solid #0dd6ec;
+}
+
+.carta__primera button:hover, .carta__Segunda button:hover, .carta__tercera button:hover, .carta__Cuarta button:hover, .carta__quinta button:hover, .carta__sexta button:hover, .carta__sexta button:hover{
+    border-top: 2px solid #0dd6ec;
+}
+
+/* FOOTER */
+.contenedor footer{
+    grid-area: footer;
+    background-color: rgba(0, 0, 0, 0.842);
+    border-top: 4px solid #0dd6ec;
+}
+
+.datosClinica{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.redes_S{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes_S img{
+    width: 40px;
+    margin: 10px 20px;
+}
+
+.copyR{
+    color: white;
+    display: flex;  
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+/* animacion cambio de color titulos*/
+@keyframes cambiarColor{
+    0%{
+        color: #02ff96;
+    }
+
+    25%{
+        color: #00d39e;
+    }
+
+    50%{
+        color: #00968e;
+    }
+
+    75%{
+        color: #6aeaf8;
+    }
+    100%{
+        color:#0dd6ec;
+    }
+}
+
+/* -----------------------------------SERVICIOS-------------------------------------- */
+/* header */
+.contenedor header{
+    grid-area: header;
+    width: 100%;
+    box-shadow: 1px 1px 5px #000;
+}
+/* main */
+.contenedor #pag__servicios{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: 
+    "datD datD datD"
+    "cartU cartU cartU"
+    "cartD cartD cartD"
+    "datU datU datU"
+    ;
+    background-color: rgba(228, 224, 224, 0.466);
+}
+
+/* primer trio de cartas */
+#pag__servicios .primCartas{
+    grid-area: cartU;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 20px 50px 20px;
+}
+
+/* carta 1: ortodoncia */
+.carta__primeraServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/bracket-tratamiento.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+/* carta 2: blanqueamiento */
+.carta__segundaServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/blanqueamiento.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* carta 3: invisaling */
+.carta__terceraServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/invisalight.png);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+/* segundo trio de cartas */
+#pag__servicios .segCartas{
+    grid-area: cartD;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 20px;
+}
+
+/* carta 4: endodoncia */
+.carta__cuartaServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/endodoncia-nueva.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* carta 5: implantologia */
+.carta__quintaServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/tsyos.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* carta 6: carillas */
+.carta__sextaServ{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url(../assets/images/carillas.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.carta__primeraServ,.carta__segundaServ,.carta__terceraServ,.carta__cuartaServ,
+.carta__quintaServ,.carta__sextaServ{
+    border: groove #0dd6ec;
+    filter: grayscale(100%);
+    display: flex;
+    width: 30%;
+    height: 30vh;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    color: transparent;
+}
+
+/* animacion cartas */
+.carta__primeraServ:hover,.carta__segundaServ:hover,.carta__terceraServ:hover,.carta__cuartaServ:hover,
+.carta__quintaServ:hover,.carta__sextaServ:hover{
+    border: groove #0dd6ec;
+    filter: grayscale(0);
+    transition-duration: 1.5s;
+    transition-delay: .3s;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* datos de servicios */
+#pag__servicios .cajas{
+    grid-area:datU ;
+    margin: 0 40px;
+    padding: 20px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+        )
+        ,url(../assets/images/paciente2.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cajas span{
+    color: white;
+    margin: 0 20px;
+}
+
+.cajas h3{
+    color: #0dd6eccb;
+}
+
+/* Sonreí feliz con SMILE */
+#pag__servicios .service{
+    grid-area:datD ;
+    display: flex;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0 50px;
+}
+
+.service h3{
+    animation-name: cambiarColor;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* ------------------------------------ OBRA SOCIAL ------------------------------*/
+/* obras sociales e img */
+.contenedor .main_ObS{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+
+    grid-template-areas: 
+    "mutual mutual asideObraS"
+    "mutual2 mutual2 asideObraS"
+    "pago pago pago"
+    "medios medios medios"
+    ;
+}
+/* primera fila de mutuales */
+.main_ObS .mutuales__primeras{
+    grid-area: mutual;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 40px 0 40px;
+}
+.mutuales__primeras div{
+    display: flex;
+}
+.mutuales__primeras div img{
+    margin: 0 30px;
+}
+
+.mutuales__primeras h2{
+    animation-name: cambiarColor;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/*tamaño logos mutuales*/
+.l-swis,.l-sanc,.l-consulm,.iosfa{
+    width: 200px;
+}
+.osmecon{
+    width: 130px;
+}
+.omint{
+    width: 150px;
+}
+
+/* segunda fila de mutuales */
+.main_ObS .mutuales__segundas{
+    grid-area: mutual2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+.mutuales__segundas div img{
+    margin: 0 30px;
+}
+
+/* img paciente  */
+.main_ObS .publicidad{
+    grid-area: asideObraS;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0;
+    width: 100%;
+}
+.publicidad img{
+    width: 300px;
+    border: groove #0dd6ec;
+}
+
+/*seccion medios de pagos*/
+
+.main_ObS .pago{
+    grid-area:pago ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.main_ObS .medios__pago{
+    grid-area: medios;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.medios__pago  div{
+    margin: 40px 0;
+}
+/* ---------------------------------------Nuestra Clinica--------------------------------------- */
+
+.contenedor .main__clin{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+
+    grid-template-areas: 
+    "imgClin imgClin imgClin"
+    "datClin datClin imgClin2"
+    "datClin1 datClin1 datClin1"
+    ;
+}
+
+.main__clin .figuras{
+    grid-area: imgClin;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.main__clin .figuras img{
+    margin: 50px 20px;
+    border: groove #0dd6ec;
+}
+
+.main__clin .info_clin{
+    grid-area:datClin;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    padding: 30px;
+}
+
+.info_clin p{
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.main__clin .imgClin2{
+    grid-area: imgClin2;
+    padding: 30px;
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.imgClin2 img{
+    border: groove #0dd6ec;
+}
+
+.main__clin .nuestra-clinica{
+    grid-area: datClin1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.nuestra-clinica div {
+    padding: 0 120px;
+
+}
+.nuestra-clinica p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.wave{
+    position: relative;
+    top: 70px;
+}
+
+/* ---------------------------Contacto--------------------- */
+
+.contenedor .mainCont{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto);
+
+    grid-template-areas: 
+    "form imgC"
+    "map map"
+    ;
+    background-color: #73c3cc3b;
+}
+
+.mainCont .form{
+    margin-top: 60px;
+    grid-area: form;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.678);
+}
+
+.form form{
+    background: radial-gradient(circle, rgba(104, 240, 149, 0.527) 0%, rgba(0, 101, 99, 0.582) 100%);
+}
+
+.form .botonEnv{
+    position: relative;
+    left: 150px;
+    color: rgba(0, 0, 0, 0.678);
+    font-weight: bold;
+    margin: 30px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.mainCont .imgC{
+    margin-top: 60px;
+    grid-area: imgC;
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainCont .maps{
+    grid-area: map;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.maps .mapaC{
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+}
+
+/* ---------------------------MEDIA QUERIES--------------------- */
+/* desktop */
+@media screen and (max-width:1200px) {
+    /* home */
+    .logo .titulo{
+        font-size: 20px;
+    }
+    nav ul li{
+        line-height: 125px;
+    }
+    nav ul li a{
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    /* home */
+    .logo{
+        padding: 20px 20px;
+    }
+    .logo img{
+        width: 50px;
+        height: 60px;
+    }
+    .logo .titulo{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    nav ul{
+        margin-right: 10px;
+    }
+    nav ul li{
+        line-height: 115px;
+    }
+    nav ul li a{
+        font-size: 12px;
+        padding: 5px 5px;
+    }
+/* obras sociales e img */
+    .contenedor .main_ObS{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(5,auto);
+
+        grid-template-areas: 
+        "mutual"
+        "mutual2"
+        "asideObraS"
+        "pago"
+        "medios"
+        ;
+    }
+
+    /* contacto */
+    .imgC img{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    /* obra social */
+    .mutuales__primeras div img{ /*ver si borrar*/
+        margin: 0 15px;
+    }
+    .l-swis,.l-sanc,.l-consulm,.iosfa{
+        width: 150px;
+    }
+    .osmecon{
+        width: 65px;
+    }
+    .omint{
+        width: 75px;
+    }
+
+    /* contacto */
+    .contenedor .mainCont{
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+        "form"
+        "imgC"
+        "map"
+        ;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    /* -------home---------- */
+    /* header */
+    .checkBtn{
+        display: block;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position:fixed;
+        width: 70%;
+        height: 100%;
+        background-color: #9b9898;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        overflow-y: hidden;
+    }
+
+    nav ul li{
+        margin: 40px 0;
+        line-height: 20px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover{
+        background: none;
+    }
+    #check:checked ~ ul{
+        left: 0;
+        }
+    
+
+
+    /* main */
+    main #clinica{
+
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+        "article"
+        "asideUno"
+        "asideDos";
+    }
+
+    main #servicios{
+
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+        "parUno"
+        "parDos"
+        "parTres";
+    }
+    /* footer */
+    .copyR{
+        justify-content: center;
+        margin:20px;
+    }
+/* nuestra-clinica */
+    .contenedor .main__clin{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);
+    
+        grid-template-areas: 
+        "imgClin"
+        "datClin"
+        "imgClin2"
+        "datClin1"
+        ;
+    }
+}
+
+@media screen and (max-width:700px) {
+        /* home */
+    .smile h1{
+        font-size: 20px;
+    } 
+    #img-portada p{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    /* servicios */
+    .carta__primeraServ h3,.carta__segundaServ h3,.carta__terceraServ h3,.carta__cuartaServ h3,
+    .carta__quintaServ h3,.carta__sextaServ h3{
+        font-size: 12px;
+    }
+    /* obra social */
+    .mutuales__primeras div{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .mutuales__segundas div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .mutuales__segundas div img{
+        margin: 20px 0;
+    }
+
+    .main_ObS .publicidad{
+        display:none;
+    }
+
+    .main_ObS .medios__pago{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .medios__pago  div{
+        margin: 10px 0;
+    }
+    .medios__pago  div img{
+        margin: 20px 0;
+    }
+
+    /* .nuestra-clinica */
+    .main__clin .videoYout{
+        width: 300px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+        /* home */
+    .clinica__trat .img{
+        display: none;
+    }
+    /* service */
+    #pag__servicios .cajas{
+        margin: 0 10px;
+        padding: 10px;
+        background-image: none;
+        background-color: #858282;
+    }
+    /* nuestra clinica */
+    .imgClin2 img{
+        width: 250px;
+    }
+
+    .nuestra-clinica div {
+        padding: 0 30px;
+    }
+
+    /* contacto */
+    .imgC img{
+        width: 250px;
+    }
+
+    .mainCont .form{
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+    }
+
+    .form form input, .form form textarea{
+        width: 200px;
+    } 
+
+    .form .botonEnv{
+        width: 60px;
+        padding: .5px;
+        position: static;
+        margin-left: 73px;
+    }
+
+}
+
+@media screen and (max-width:380px) {
+    /* home */
+    .parUno{
+        width: 80%;
+    }
+    .parDos{
+        width: 80%;
+    }
+    .parTres{
+        width: 80%;
+    }
+
+    .copyR{
+        font-size: 10px;
+    }
+    /* servicio */
+    .carta__primeraServ h3,.carta__segundaServ h3,.carta__terceraServ h3,.carta__cuartaServ h3,
+    .carta__quintaServ h3,.carta__sextaServ h3{
+        font-size: 8px;
+    }
+
+    /* .nuestra-clinica */
+    .main__clin .videoYout{
+        width: 200px;
+    }
+    .main__clin .figuras img{
+        width: 200px;
+    }
+}
+
+/* @media screen and (min-width: 2560px) {
+    nav{
+        height: 160px;
+    }
+    .logo img{
+        margin-left: 60px;
+        width: 80px;
+        height: 100px;
+    }
+    
+    .logo .titulo{
+        font-size: 50px;
+    }
+
+    nav ul li{
+        line-height: 170px;
+    }
+
+    nav ul li a{
+        font-size: 32px;
+        padding: 14px 26px;
+    }
+}  */
