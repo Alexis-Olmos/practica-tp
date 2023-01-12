@@ -77,7 +77,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    border-top: 3px solid rgb(34, 231, 182);
+    border-top: 3px solid #22e7b6;
     font-weight: bold;
     color: #0dd6ec;
 }
@@ -157,6 +157,7 @@ main #clinica{
 .img-clinica img{
     max-width: 100%;
     width: 800px;
+    height: auto;
     padding: 40px;
     margin: auto;
     border-radius: 50px;
@@ -180,7 +181,7 @@ main #clinica{
     color: rgba(0, 0, 0, 0.678);
 }
 .clinica__datos button{
-    background-color: rgba(41, 40, 40, 0.13);
+    background-color: #29282821;
     cursor: pointer;
     border: none;
     color: #06a6b8;
@@ -206,7 +207,7 @@ main #clinica{
     justify-content: center;
     padding: 40px 20px;
     margin-top: 70px;
-    color: rgba(0, 0, 0, 0.678);
+    color: #000000ad;
 }
 
 .clinica__trat h2{
@@ -214,7 +215,7 @@ main #clinica{
 }
 
 .clinica__trat button{
-    background-color: rgba(41, 40, 40, 0.13);
+    background-color: #29282821;
     cursor: pointer;
     border: none;
     color: #06a6b8;
@@ -230,15 +231,14 @@ main #clinica{
 }
 
 /* **** section3: servicios ******** */
-
 main #servicios{
     grid-area: sectTres;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
     grid-template-areas: 
-    "parUno parDos parTres"
-    "parUno parDos parTres";
+    "parUno parUno parUno"
+    "parUno parUno parUno";
     padding: 90px 50px;
     background-color: rgba(228, 224, 224, 0.466);
 }
@@ -247,7 +247,23 @@ main #servicios{
     width: 100%;
     grid-area: parUno;
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.carta__primera,.carta__Segunda,.carta__tercera,
+.carta__Cuarta,.carta__quinta,.carta__sexta{
+    border: groove #0dd6ec;
+    display: flex;
     flex-direction: column;
+    width: 30%;
+    height: 30vh;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    margin: 20px;
 }
 
 /* carta 1: ortodoncia */
@@ -260,12 +276,6 @@ main #servicios{
         ,url(../assets/images/bracket-tratamiento.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
-    margin-bottom: 50px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
 }
 
 /* carta 2: blanqueamiento */
@@ -279,18 +289,6 @@ main #servicios{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
-}
-
-.parDos{
-    width: 100%;
-    grid-area: parDos;
-    display: flex;
-    flex-direction: column;
 }
 
 /* carta 3: invisaling */
@@ -304,12 +302,6 @@ main #servicios{
     background-size:cover ;
     background-repeat: no-repeat;
     background-position: center bottom;
-    margin-bottom: 50px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
 }
 
 /* carta 4: endodoncia */
@@ -323,18 +315,6 @@ main #servicios{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
-}
-
-.parTres{
-    width: 100%;
-    grid-area: parTres;
-    display: flex;
-    flex-direction: column;
 }
 
 /* carta 5: implantologia */
@@ -348,12 +328,6 @@ main #servicios{
     background-size:cover ;
     background-repeat: no-repeat;
     background-position: center bottom;
-    margin-bottom: 50px;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
 }
 
 /* carta 6: carillas */
@@ -367,34 +341,30 @@ main #servicios{
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 40px 20px;
 }
 
 /* posicion de titulo h3 y boton +info */
-.carta__primera h3, .carta__Segunda h3, .carta__tercera h3, .carta__Cuarta h3, .carta__quinta h3, .carta__sexta h3{
-    position: relative;
-    top: 35px;
+.parUno h3{
+    margin-top: 50px;
     color: white;
 }
 
-.carta__primera button, .carta__Segunda button, .carta__tercera button, .carta__Cuarta button, .carta__quinta button, .carta__sexta button{
-    position: relative;
-    top: 40px;
+.parUno button{
+    margin-top: 10px;
     cursor: pointer;
     color: white;
     font-size: 16px;
+    font-weight: bold;
     background-color: transparent;
     border: none;
 }
 
 /* animaciones servicios */
 .carta__primera:hover, .carta__Segunda:hover, .carta__tercera:hover, .carta__Cuarta:hover, .carta__quinta:hover, .carta__sexta:hover, .carta__sexta:hover{
-    transition-duration: 1s;
+    transition-duration: 1.5s;
+    transition-delay: .3s;
     transform: scale(1.15);
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.8);
     border: 2px solid #0dd6ec;
 }
 
@@ -1028,6 +998,7 @@ main #servicios{
     }
     /* footer */
     .copyR{
+        align-items: center;
         justify-content: center;
         margin:20px;
     }
@@ -1104,6 +1075,21 @@ main #servicios{
 
 }
 
+
+@media screen and (max-width:615px){
+    /* home */
+    .carta__primera,.carta__Segunda,.carta__tercera,
+    .carta__Cuarta,.carta__quinta,.carta__sexta{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+    .copyR{
+        text-align: center;
+    }
+}
+
+
 @media screen and (max-width:500px) {
         /* home */
     .clinica__trat .img{
@@ -1154,17 +1140,17 @@ main #servicios{
 @media screen and (max-width:380px) {
     /* home */
     .parUno{
-        width: 80%;
+        width: 100%;
     }
-    .parDos{
-        width: 80%;
+
+    .parUno h3{
+        font-size: 10px;
     }
-    .parTres{
-        width: 80%;
-    }
+
 
     .copyR{
         font-size: 10px;
+        text-align: center;
     }
     /* servicio */
     .carta__primeraServ h3,.carta__segundaServ h3,.carta__terceraServ h3,.carta__cuartaServ h3,
